@@ -612,25 +612,45 @@ summary::-webkit-details-marker {
 /* ========================================= */
 
 footer{
-    background-color:#ebdbd5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
-    padding: 20px 20px;
-    margin-top: auto;
+    padding-bottom: 20px;
     background: rgba(0, 0, 0, 0.1);
     border-top: 2px solid #4ecdc4;
 }
-
-
-.footer-simple p {
-    margin: 10px 0;
-    color:#ffffff;;
+.footer-todo{
+    display: flex;
+    flex-direction: row;
+    justify-self: unset;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0);
+    text-align: center;
 }
 
-.copyright {
-    font-size: 0.9em;
-    color: rgba(255, 255, 255, 0.6);
-    margin-top: 15px;
+.footer-simple{
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    padding: 10px 10px 10px 10px;
+    margin: 20px 10px 20px 10px;
 }
+
+.footer-media{
+    margin: 20px 30px 20px 30px;
+    padding: 18px 20px 10px 20px;
+}
+
+.footer-media ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 15px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+}
+
+
 
 /* ========================================= */
 /* RESPONSIVE DESIGN */
