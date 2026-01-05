@@ -1,4 +1,45 @@
-// Smooth scrolling for navigation links
+// ========================================
+// MENÚ HAMBURGUESA
+// ========================================
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+// Toggle menú al hacer clic en hamburguesa
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    
+    // Prevenir scroll cuando el menú está abierto
+    if (navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Cerrar menú al hacer clic en un enlace
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+});
+
+// Cerrar menú al hacer clic fuera de él
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// ========================================//
+// Desplazamiento suave para enlaces de navegacion
+// ========================================//
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -87,3 +128,6 @@ btnSubir.addEventListener('click', function() {
         behavior: 'smooth'
     });
 });
+
+
+ 
